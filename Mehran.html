@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>System Access</title>
+<style>
+body{
+   background:black;
+   color:#00ffff;
+   text-shadow:0 0 10px #00ffff;
+   overflow-y:auto;
+   margin:0;
+   font-family:monospace;
+   padding:40px;
+   font-size:25px;
+}
+#text::after{
+    content:"|";
+    animation:blink 0.1s infinite;
+}
+ @keyframe blink{
+     80%{opacity:0;
+}
+</style>
+</head>
+<body>
+
+<div id="text"></div>
+
+<script>
+    const lines = [
+       "Booting system...",
+       "Checking hardware ...",
+       "Initializing memory...",
+       "Loading kernel...",
+       "Starting network services...",
+       "Connecting to satellite.Connected...",
+       "Establishing secure channel.Channel Found...",
+       "Authenticating credentials...",
+       "Accessing secure database...",
+       "Decrypting System files.Files Decrypted and Are Ready to View...",
+       "Scanning network for Bugs...",
+       "Locating user profile...",
+       "Please Wait for some time,Loading user profile....",
+       "Verifying permissions...",
+       "Checking firewall status...",
+       "Monitoring system activity...",
+       "Syncing cloud storage...",
+       "Retrieving classified records...",
+       "Analyzing security logs...",
+       "Detecting nearby devices...",
+       "Calibrating sensors...",
+       "Updating encryption keys...",
+       "Mapping network topology...",
+       "Resolving host addresses...",
+       "Collecting telemetry data...",
+       "Inspecting active processes...",
+       "Checking server health.Server Health Good...",
+       "Synchronizing system clock...",
+       "Downloading mission parameters...",
+       "Loading AI modulesand Data Programs...",
+       "Training neural network...",
+       "Optimizing algorithms...",
+       "Running diagnostics on System ...",
+       "Testing communication channels...",
+       "Checking satellite uplink.Satellite linking...",
+       "Verifying data integrity...",
+       "Backing up critical files and locating devices...",
+       "Reviewing access history...",
+       "Generating security token .Security Token Found on System...",
+       "Unlocking restricted areas...",
+       "Preparing command interface...",
+       "Scanning for threats...",
+       "No threats detected.",
+       "Loading personal records...",
+       "User Found: Mehran",
+       "Status: Active",
+       "Rank: COMMANDER",
+       "Clearance Level: OMEGA",
+       "Mission Status: ACTIVE",
+       "System Status: ONLINE",
+       "All Systems Operational and Clear We are Ready to Engage.",
+       "Access Granted.",
+       "Welcome Back, Captain Mehran.",
+       "Please click The Red button To Engage.",
+];
+
+let i = 0;
+let j = 0;
+const text = document.getElementById("text");
+
+function type(){
+    if(i < lines.length){
+        if(j < lines[i].length){
+            text.innerHTML += lines[i][j];
+            j++;
+            setTimeout(type,30);
+        }else{
+            text.innerHTML += "<br>";
+
+
+    window.scrollTo({
+            top:document.body.scrollHeight,
+            behaviour:"smooth"
+});
+            i++;
+            j = 0;
+            setTimeout(type,300);
+        }
+    }
+}
+
+type();
+</script>
+
+</body>
+</html>
